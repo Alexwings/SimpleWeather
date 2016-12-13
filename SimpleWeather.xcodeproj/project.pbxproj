@@ -16,7 +16,8 @@
 		E82EA3481DFF61B000C449EC /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA3471DFF61B000C449EC /* WeatherInfo.m */; };
 		E82EA34B1DFF8E4000C449EC /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA34A1DFF8E4000C449EC /* Constant.m */; };
 		E82EA3531DFFA44A00C449EC /* WeatherCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA3521DFFA44A00C449EC /* WeatherCenter.m */; };
-		E82EA3551DFFB68A00C449EC /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E82EA3541DFFB68A00C449EC /* keys.plist */; };
+		E86319EB1DFFD9E5001175B0 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E86319EA1DFFD9E5001175B0 /* keys.plist */; };
+		E86319ED1DFFDA38001175B0 /* keys.template.plist in Resources */ = {isa = PBXBuildFile; fileRef = E86319EC1DFFDA38001175B0 /* keys.template.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,8 @@
 		E82EA34A1DFF8E4000C449EC /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		E82EA3511DFFA44A00C449EC /* WeatherCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCenter.h; sourceTree = "<group>"; };
 		E82EA3521DFFA44A00C449EC /* WeatherCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCenter.m; sourceTree = "<group>"; };
-		E82EA3541DFFB68A00C449EC /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		E86319EA1DFFD9E5001175B0 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		E86319EC1DFFDA38001175B0 /* keys.template.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.template.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,8 @@
 				E82EA33D1DFF543A00C449EC /* LaunchScreen.storyboard */,
 				E82EA3401DFF543A00C449EC /* Info.plist */,
 				E82EA32F1DFF543A00C449EC /* Supporting Files */,
-				E82EA3541DFFB68A00C449EC /* keys.plist */,
+				E86319EA1DFFD9E5001175B0 /* keys.plist */,
+				E86319EC1DFFDA38001175B0 /* keys.template.plist */,
 			);
 			path = SimpleWeather;
 			sourceTree = "<group>";
@@ -163,9 +166,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E82EA3551DFFB68A00C449EC /* keys.plist in Resources */,
+				E86319EB1DFFD9E5001175B0 /* keys.plist in Resources */,
 				E82EA33F1DFF543A00C449EC /* LaunchScreen.storyboard in Resources */,
 				E82EA33C1DFF543A00C449EC /* Assets.xcassets in Resources */,
+				E86319ED1DFFDA38001175B0 /* keys.template.plist in Resources */,
 				E82EA33A1DFF543A00C449EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
