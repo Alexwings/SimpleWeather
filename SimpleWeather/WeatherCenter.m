@@ -102,7 +102,9 @@ NSURLSession *session;
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 WeatherInfo *current = [[WeatherInfo alloc] initWithDictionary:currentDic];
-                completionHandler(current);
+                if(completionHandler != nil){
+                    completionHandler(current);
+                }
             });
             [session invalidateAndCancel];
             session = nil;

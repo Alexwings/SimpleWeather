@@ -16,6 +16,7 @@ static NSString *longitudeKey = @"longitude";
 
 @property(nonatomic, strong)WeatherCenter *center;
 @property(nonatomic, strong)WeatherInfo *current;
+@property (weak, nonatomic) IBOutlet UIImageView *launchImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroudImageView;
 @property (weak, nonatomic) IBOutlet UILabel *curTempLabel;
@@ -44,6 +45,8 @@ static NSString *longitudeKey = @"longitude";
     self.hourlyButton.layer.borderWidth = 0.2;
     //hide all the view when enter the view;
     self.backgroudImageView.hidden = true;
+    
+    self.launchImageView.image = [UIImage imageNamed:@"launch.jpg"];
 }
 - (IBAction)searchBarButtonClicked:(UIBarButtonItem *)sender {
     UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"Location Info" message:@"Please input you latitude and longitude information!" preferredStyle:UIAlertControllerStyleAlert];
@@ -97,6 +100,7 @@ static NSString *longitudeKey = @"longitude";
 
 -(void)updateLabels{
    //TODO: refresh labels and status of buttons for new current weather information
+    self.launchImageView.hidden = true;
     assert(NO);
 }
 

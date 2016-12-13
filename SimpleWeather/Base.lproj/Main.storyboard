@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ue-fb-g6n">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTa-4j-5oK" customClass="UIImageView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
@@ -82,7 +85,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3ue-fb-g6n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="C2I-aC-HkP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ue-fb-g6n" secondAttribute="bottom" id="Ha8-cJ-0Xy"/>
                             <constraint firstItem="UTa-4j-5oK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RHO-wL-CrL"/>
+                            <constraint firstItem="3ue-fb-g6n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Umk-Nb-Dht"/>
+                            <constraint firstAttribute="trailing" secondItem="3ue-fb-g6n" secondAttribute="trailing" id="YTN-F7-mNB"/>
                             <constraint firstItem="UTa-4j-5oK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fvn-pl-McT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UTa-4j-5oK" secondAttribute="bottom" id="sXq-0A-Mxa"/>
                             <constraint firstAttribute="trailing" secondItem="UTa-4j-5oK" secondAttribute="trailing" id="usP-Ft-Vwo"/>
@@ -90,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="quw-vq-u0e">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="tCv-3s-VmC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="searchBarButtonClicked:" destination="BYZ-38-t0r" id="u0b-mb-KD4"/>
                             </connections>
@@ -102,6 +110,7 @@
                         <outlet property="dailyButton" destination="RZ9-jS-ra6" id="sUw-Ml-hv8"/>
                         <outlet property="hourlyButton" destination="hPr-5t-CcQ" id="Uts-FB-db5"/>
                         <outlet property="humidLabel" destination="sAu-1m-8oX" id="6ca-S8-l1n"/>
+                        <outlet property="launchImageView" destination="3ue-fb-g6n" id="UEY-8r-XYj"/>
                         <outlet property="rainProbLabel" destination="GBw-Mf-rUu" id="Cmr-IA-Mmh"/>
                         <outlet property="visibiltyLabel" destination="fGh-mE-6cQ" id="797-lh-RXQ"/>
                         <outlet property="windLabel" destination="aLV-Sr-iLz" id="R1J-bR-xL9"/>
@@ -116,7 +125,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j6u-Cg-Ip9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oCO-ce-fIQ">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="oCO-ce-fIQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
