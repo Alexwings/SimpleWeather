@@ -9,6 +9,10 @@
 #import "Constant.h"
 
 
+NSString *const latitudeKey = @"latitude";
+NSString *const longitudeKey = @"longitude";
+NSString *const timezoneKey = @"timezone";
+
 NSString *const iconKey = @"icon";
 NSString *const timeKey = @"time";
 NSString *const summaryKey = @"summary";
@@ -27,3 +31,5 @@ NSString *const dailyInfoKey = @"daily";
 NSString *const hourlyInfoKey = @"hourly";
 
 NSString *const dataInfoKey = @"data";
+
+NSString *const Celsius = @"℃";

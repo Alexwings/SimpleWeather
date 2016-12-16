@@ -8,9 +8,7 @@
 
 #import "ViewController.h"
 #import "WeatherCenter.h"
-
-static NSString *latitudeKey = @"latitude";
-static NSString *longitudeKey = @"longitude";
+#import "Utils.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 
@@ -20,14 +18,18 @@ static NSString *longitudeKey = @"longitude";
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroudImageView;
 @property (weak, nonatomic) IBOutlet UILabel *curTempLabel;
-@property (weak, nonatomic) IBOutlet UILabel *curTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rainProbLabel;
 @property (weak, nonatomic) IBOutlet UILabel *humidLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windLabel;
 @property (weak, nonatomic) IBOutlet UILabel *visibiltyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *visibilityTitle;
+@property (weak, nonatomic) IBOutlet UILabel *windTitle;
+@property (weak, nonatomic) IBOutlet UILabel *humidTitle;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *dailyButton;
-@property (weak, nonatomic) IBOutlet UIButton *hourlyButton;
+//@property (weak, nonatomic) IBOutlet UIButton *dailyButton;
+//@property (weak, nonatomic) IBOutlet UIButton *hourlyButton;
 
 @end
 
@@ -36,30 +38,25 @@ static NSString *longitudeKey = @"longitude";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.title = @"Welcome";
     self.center = [WeatherCenter sharedCenter];
-    self.title = @"Welcome";
-    //add border to buttons
-    self.dailyButton.layer.borderColor = [UIColor blueColor].CGColor;
-    self.dailyButton.layer.borderWidth = 0.2;
-    self.hourlyButton.layer.borderColor = [UIColor blueColor].CGColor;
-    self.hourlyButton.layer.borderWidth = 0.2;
+
     //hide all the view when enter the view;
     self.backgroudImageView.hidden = true;
-    
-    self.launchImageView.image = [UIImage imageNamed:@"launch.jpg"];
+    self.launchImageView.image = [UIImage imageNamed:@"launchPic"];
 }
 - (IBAction)searchBarButtonClicked:(UIBarButtonItem *)sender {
     UIAlertController *alert =[UIAlertController alertControllerWithTitle:@"Location Info" message:@"Please input you latitude and longitude information!" preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.tag = 1;
         textField.delegate = self;
-        textField.keyboardType = UIKeyboardTypeNumberPad;
+        textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
         textField.placeholder = @"latitude";
     }];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.tag = 2;
         textField.delegate = self;
-        textField.keyboardType = UIKeyboardTypeNumberPad;
+        textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
         textField.placeholder = @"longitude";
     }];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -99,10 +96,52 @@ static NSString *longitudeKey = @"longitude";
 }
 
 -(void)updateLabels{
-   //TODO: refresh labels and status of buttons for new current weather information
     self.launchImageView.hidden = true;
-    assert(NO);
+    self.backgroudImageView.hidden = false;
+    self.backgroudImageView.image = [UIImage imageNamed:self.current.icon];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^*night*$" options:NSRegularExpressionCaseInsensitive error:nil];
+    if([regex numberOfMatchesInString:self.current.icon options:0 range:NSMakeRange(0, self.current.icon.length)] != 0){
+        [self textTintToWhite];
+        self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+        self.searchButton.tintColor = [UIColor whiteColor];
+        self.tabBarController.tabBar.barStyle = UIBarStyleBlack;
+    }
+    regex = nil;
+    self.navigationItem.title = [Utils convertTime:self.current.time hasDate:YES hasTime:YES];
+    self.curTempLabel.text = [NSString stringWithFormat:@"%.0f %@", self.current.currentTemp, Celsius];
+    self.summaryLabel.text = self.current.summary;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = self.center.timezone;
+    NSInteger month = [[NSCalendar currentCalendar] component:NSCalendarUnitMonth fromDate:self.current.time];
+    if([Utils currentIsWinter:month]){
+        self.rainProbLabel.text = [NSString stringWithFormat:@"Chance of snow: %d%%", (int)(self.current.chanceOfSonw * 100)];
+    }else{
+        self.rainProbLabel.text = [NSString stringWithFormat:@"Chance of rain: %d%%", (int)(self.current.chanceOfSonw * 100)];
+        [self textTintToWhite];
+    }
+    self.humidLabel.text = [NSString stringWithFormat:@"%.0f%%", self.current.humidity * 100];
+    self.windLabel.text = [NSString stringWithFormat:@"%.00f m/s", self.current.windspeed];
+    self.visibiltyLabel.text = [NSString stringWithFormat:@"%.00f km", self.current.visibility];
+    
+    self.tabBarController.viewControllers[1].tabBarItem.enabled = true;
+    self.tabBarController.viewControllers[2].tabBarItem.enabled = true;
 }
+
+
+
+//change the UI text to white
+-(void)textTintToWhite{
+    self.curTempLabel.textColor = [UIColor whiteColor];
+    self.summaryLabel.textColor = [UIColor whiteColor];
+    self.rainProbLabel.textColor = [UIColor whiteColor];
+    self.humidLabel.textColor = [UIColor whiteColor];
+    self.windLabel.textColor = [UIColor whiteColor];
+    self.visibiltyLabel.textColor = [UIColor whiteColor];
+    self.visibilityTitle.textColor = [UIColor whiteColor];
+    self.humidTitle.textColor = [UIColor whiteColor];
+    self.windTitle.textColor = [UIColor whiteColor];
+}
+
 
 
 #pragma mark - UITextFieldDelegate

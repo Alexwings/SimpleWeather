@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WeatherInfo.h"
+#import "Constant.h"
 
 //enumeration type of different type of weather information
 typedef NS_ENUM(NSInteger, WeatherInfoType){
@@ -16,6 +17,10 @@ typedef NS_ENUM(NSInteger, WeatherInfoType){
 };
 
 @interface WeatherCenter : NSObject
+
+@property(nonatomic, readonly, getter=getLatitude)double latitude;
+@property(nonatomic, readonly, getter=getLongitude)double longitude;
+@property(nonatomic, readonly)NSTimeZone *timezone;
 
 //getter for daily forcasts
 @property(nonatomic, readonly)NSArray *dailyForcasts;

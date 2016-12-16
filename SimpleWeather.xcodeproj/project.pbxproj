@@ -11,13 +11,18 @@
 		E82EA3341DFF543A00C449EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA3331DFF543A00C449EC /* AppDelegate.m */; };
 		E82EA3371DFF543A00C449EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA3361DFF543A00C449EC /* ViewController.m */; };
 		E82EA33A1DFF543A00C449EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E82EA3381DFF543A00C449EC /* Main.storyboard */; };
-		E82EA33C1DFF543A00C449EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E82EA33B1DFF543A00C449EC /* Assets.xcassets */; };
 		E82EA33F1DFF543A00C449EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E82EA33D1DFF543A00C449EC /* LaunchScreen.storyboard */; };
 		E82EA3481DFF61B000C449EC /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA3471DFF61B000C449EC /* WeatherInfo.m */; };
 		E82EA34B1DFF8E4000C449EC /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA34A1DFF8E4000C449EC /* Constant.m */; };
 		E82EA3531DFFA44A00C449EC /* WeatherCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EA3521DFFA44A00C449EC /* WeatherCenter.m */; };
 		E86319EB1DFFD9E5001175B0 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E86319EA1DFFD9E5001175B0 /* keys.plist */; };
 		E86319ED1DFFDA38001175B0 /* keys.template.plist in Resources */ = {isa = PBXBuildFile; fileRef = E86319EC1DFFDA38001175B0 /* keys.template.plist */; };
+		E8C26D2A1E01005600D5A31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C26D291E01005600D5A31F /* Assets.xcassets */; };
+		E8D3F0BC1E03689700D61ED4 /* DailyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D3F0BB1E03689700D61ED4 /* DailyTableViewController.m */; };
+		E8D3F0BF1E03724A00D61ED4 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D3F0BE1E03724A00D61ED4 /* Utils.m */; };
+		E8D3F0C31E0375BA00D61ED4 /* DailyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D3F0C11E0375BA00D61ED4 /* DailyCell.m */; };
+		E8D3F0C71E038F2400D61ED4 /* HourlyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D3F0C61E038F2400D61ED4 /* HourlyTableViewController.m */; };
+		E8D3F0CA1E03926200D61ED4 /* HourlyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D3F0C91E03926200D61ED4 /* HourlyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +33,6 @@
 		E82EA3351DFF543A00C449EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E82EA3361DFF543A00C449EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E82EA3391DFF543A00C449EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E82EA33B1DFF543A00C449EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E82EA33E1DFF543A00C449EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E82EA3401DFF543A00C449EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E82EA3461DFF61B000C449EC /* WeatherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherInfo.h; sourceTree = "<group>"; };
@@ -39,6 +43,17 @@
 		E82EA3521DFFA44A00C449EC /* WeatherCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCenter.m; sourceTree = "<group>"; };
 		E86319EA1DFFD9E5001175B0 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		E86319EC1DFFDA38001175B0 /* keys.template.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.template.plist; sourceTree = "<group>"; };
+		E8C26D291E01005600D5A31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8D3F0BA1E03689700D61ED4 /* DailyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTableViewController.h; sourceTree = "<group>"; };
+		E8D3F0BB1E03689700D61ED4 /* DailyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyTableViewController.m; sourceTree = "<group>"; };
+		E8D3F0BD1E03724A00D61ED4 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		E8D3F0BE1E03724A00D61ED4 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		E8D3F0C01E0375BA00D61ED4 /* DailyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCell.h; sourceTree = "<group>"; };
+		E8D3F0C11E0375BA00D61ED4 /* DailyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCell.m; sourceTree = "<group>"; };
+		E8D3F0C51E038F2400D61ED4 /* HourlyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyTableViewController.h; sourceTree = "<group>"; };
+		E8D3F0C61E038F2400D61ED4 /* HourlyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyTableViewController.m; sourceTree = "<group>"; };
+		E8D3F0C81E03926200D61ED4 /* HourlyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyCell.h; sourceTree = "<group>"; };
+		E8D3F0C91E03926200D61ED4 /* HourlyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +91,21 @@
 				E82EA3331DFF543A00C449EC /* AppDelegate.m */,
 				E82EA3351DFF543A00C449EC /* ViewController.h */,
 				E82EA3361DFF543A00C449EC /* ViewController.m */,
-				E82EA3491DFF8E1B00C449EC /* Constant.h */,
-				E82EA34A1DFF8E4000C449EC /* Constant.m */,
 				E82EA3381DFF543A00C449EC /* Main.storyboard */,
-				E82EA33B1DFF543A00C449EC /* Assets.xcassets */,
+				E8C26D291E01005600D5A31F /* Assets.xcassets */,
 				E82EA33D1DFF543A00C449EC /* LaunchScreen.storyboard */,
 				E82EA3401DFF543A00C449EC /* Info.plist */,
 				E82EA32F1DFF543A00C449EC /* Supporting Files */,
 				E86319EA1DFFD9E5001175B0 /* keys.plist */,
 				E86319EC1DFFDA38001175B0 /* keys.template.plist */,
+				E8D3F0BA1E03689700D61ED4 /* DailyTableViewController.h */,
+				E8D3F0BB1E03689700D61ED4 /* DailyTableViewController.m */,
+				E8D3F0C01E0375BA00D61ED4 /* DailyCell.h */,
+				E8D3F0C11E0375BA00D61ED4 /* DailyCell.m */,
+				E8D3F0C51E038F2400D61ED4 /* HourlyTableViewController.h */,
+				E8D3F0C61E038F2400D61ED4 /* HourlyTableViewController.m */,
+				E8D3F0C81E03926200D61ED4 /* HourlyCell.h */,
+				E8D3F0C91E03926200D61ED4 /* HourlyCell.m */,
 			);
 			path = SimpleWeather;
 			sourceTree = "<group>";
@@ -104,6 +125,10 @@
 				E82EA3471DFF61B000C449EC /* WeatherInfo.m */,
 				E82EA3511DFFA44A00C449EC /* WeatherCenter.h */,
 				E82EA3521DFFA44A00C449EC /* WeatherCenter.m */,
+				E8D3F0BD1E03724A00D61ED4 /* Utils.h */,
+				E8D3F0BE1E03724A00D61ED4 /* Utils.m */,
+				E82EA3491DFF8E1B00C449EC /* Constant.h */,
+				E82EA34A1DFF8E4000C449EC /* Constant.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -134,7 +159,7 @@
 		E82EA3241DFF543A00C449EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = RJT;
 				TargetAttributes = {
 					E82EA32B1DFF543A00C449EC = {
@@ -168,9 +193,9 @@
 			files = (
 				E86319EB1DFFD9E5001175B0 /* keys.plist in Resources */,
 				E82EA33F1DFF543A00C449EC /* LaunchScreen.storyboard in Resources */,
-				E82EA33C1DFF543A00C449EC /* Assets.xcassets in Resources */,
 				E86319ED1DFFDA38001175B0 /* keys.template.plist in Resources */,
 				E82EA33A1DFF543A00C449EC /* Main.storyboard in Resources */,
+				E8C26D2A1E01005600D5A31F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,9 +206,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D3F0CA1E03926200D61ED4 /* HourlyCell.m in Sources */,
 				E82EA3481DFF61B000C449EC /* WeatherInfo.m in Sources */,
 				E82EA3371DFF543A00C449EC /* ViewController.m in Sources */,
+				E8D3F0BC1E03689700D61ED4 /* DailyTableViewController.m in Sources */,
+				E8D3F0BF1E03724A00D61ED4 /* Utils.m in Sources */,
 				E82EA3341DFF543A00C449EC /* AppDelegate.m in Sources */,
+				E8D3F0C31E0375BA00D61ED4 /* DailyCell.m in Sources */,
+				E8D3F0C71E038F2400D61ED4 /* HourlyTableViewController.m in Sources */,
 				E82EA34B1DFF8E4000C449EC /* Constant.m in Sources */,
 				E82EA3311DFF543A00C449EC /* main.m in Sources */,
 				E82EA3531DFFA44A00C449EC /* WeatherCenter.m in Sources */,

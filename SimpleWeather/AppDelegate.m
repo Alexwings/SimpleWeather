@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    tabBarController.viewControllers[1].tabBarItem.enabled = false;
+    tabBarController.viewControllers[2].tabBarItem.enabled = false;
+    
     return YES;
 }
 

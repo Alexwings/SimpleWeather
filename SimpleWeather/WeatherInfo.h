@@ -10,6 +10,7 @@
 
 @interface WeatherInfo : NSObject
 
+
 //Time properties
 @property(nonatomic, strong)NSDate *time;
 @property(nonatomic, strong)NSDate *sunrise;

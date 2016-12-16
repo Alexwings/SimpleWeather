@@ -14,6 +14,10 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXPORT NSString *const latitudeKey;
+FOUNDATION_EXPORT NSString *const longitudeKey;
+FOUNDATION_EXPORT NSString *const timezoneKey;
+
 FOUNDATION_EXPORT NSString *const iconKey;
 FOUNDATION_EXPORT NSString *const timeKey;
 FOUNDATION_EXPORT NSString *const summaryKey;
@@ -31,3 +35,5 @@ FOUNDATION_EXPORT NSString *const currentInfoKey;
 FOUNDATION_EXPORT NSString *const dailyInfoKey;
 FOUNDATION_EXPORT NSString *const hourlyInfoKey;
 FOUNDATION_EXPORT NSString *const dataInfoKey;
+
+FOUNDATION_EXPORT NSString *const Celsius;

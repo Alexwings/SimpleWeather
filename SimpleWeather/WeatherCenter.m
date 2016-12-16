@@ -7,17 +7,25 @@
 //
 
 #import "WeatherCenter.h"
-#import "Constant.h"
+
 
 static NSString *api_path = @"https://api.darksky.net/forecast";
+@interface WeatherCenter (){
+    double la;
+    double lo;
+    NSMutableArray *daily;
+    NSMutableArray *hourly;
+    NSURLSession *session;
+    NSTimeZone *tzone;
+}
+
+@end
 
 @implementation WeatherCenter
 
-NSMutableArray *daily;
-NSMutableArray *hourly;
-NSURLSession *session;
 
-@synthesize dailyForcasts, hourlyForcasts;
+
+@synthesize dailyForcasts, hourlyForcasts, timezone;
 
 //getter for daily forcasts
 -(NSArray *)dailyForcasts{
@@ -27,6 +35,18 @@ NSURLSession *session;
 //getter for hourly forcasts
 -(NSArray *)hourlyForcasts{
     return hourly;
+}
+
+-(double)getLatitude{
+    return la;
+}
+
+-(double)getLongitude{
+    return lo;
+}
+
+-(NSTimeZone *)timezone{
+    return tzone;
 }
 
 //custom initialization
@@ -86,11 +106,13 @@ NSURLSession *session;
         }
         if([response isKindOfClass:[NSHTTPURLResponse class]]){
             if([(NSHTTPURLResponse *)response statusCode] != 200){
-                NSLog(@"%ld", [(NSHTTPURLResponse *)response statusCode]);
                 return;
             }
             NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             NSDictionary *currentDic = jsonData[currentInfoKey];
+            la = [jsonData[latitudeKey] doubleValue];
+            lo = [jsonData[longitudeKey] doubleValue];
+            tzone = [NSTimeZone timeZoneWithName:jsonData[timezoneKey]];
             NSArray *dailyInfo = [jsonData[dailyInfoKey] objectForKey:dataInfoKey];
             NSArray *hourlyInfo = [jsonData[hourlyInfoKey] objectForKey:dataInfoKey];
             
